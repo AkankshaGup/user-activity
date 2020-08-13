@@ -11,7 +11,6 @@ class ActivityModel extends React.Component{
   }
   render(){
       const isModelOpen=this.props.isModelOpen;
-      console.log(isModelOpen)
     return (
       <div >
          <Modal

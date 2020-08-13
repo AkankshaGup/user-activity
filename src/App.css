@@ -42,10 +42,8 @@
   background-color: #efd894;
 }
 .table-body:hover{
-  display: flex;
-  flex-direction: row;
-  padding: 10px 15px;
   background-color: #f1c956;
+  cursor: pointer;
 }
 
 

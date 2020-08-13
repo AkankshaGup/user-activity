@@ -9,7 +9,7 @@ class App extends React.Component {
     return (
       <Router>
         <Switch>
-          <Route path="/" component={UserInfo} exact={true} />
+          <Route component={UserInfo} exact={true} />
         </Switch>
       </Router>
     );
