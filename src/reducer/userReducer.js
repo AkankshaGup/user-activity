@@ -39,5 +39,12 @@ let iState={
 	]
 }
 export const userReducer=(state=iState,action)=>{
-return state;
+	const {type,payload}=action;
+	switch (type) {
+		case "LOAD_USERDATA":
+		  return iState=payload;
+		
+		default:
+			return state
+	  }
 }

@@ -44,7 +44,7 @@
 }
 .table-body:hover{
   background-color: #f1c956;
-  cursor: pointer;
+  cursor: pointer!important;
 }
 
 
@@ -74,7 +74,7 @@
     opacity: 0;
   }    
 .model{
-  width: 450px;
+  width: 405px;
   border: none;
   border-color: #d39e00;
   background-color: #efeeec;

@@ -3,7 +3,7 @@ import '../App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { connect } from "react-redux";
 import ActivityModel from "./model.js";
-import axios from "axios";
+import {loadUserData} from "../action/action.js";
 
 class UserInfo extends React.Component{
   constructor(props){
@@ -12,18 +12,16 @@ class UserInfo extends React.Component{
        isModelOpen:undefined
    }
   }
-/*   componentDidMount=()=>{
-
-    axios
-				.get(
-					`https://drive.google.com/open?id=1xZa3UoXZ3uj2j0Q7653iBp1NrT0gKj0Y`
-				)
-				.then(res => {
-          debugger;
-					console.log(res.data);
-				})
-				.catch(e => console.log(e));
-  } */
+ componentDidMount=()=>{
+  fetch('https://run.mocky.io/v3/87fdd204-5797-42dd-8d94-a72c5c1bc16a', {
+    method: 'get',
+    header: { 'Content-Type': 'application/json' },
+  })
+    .then(res => res.json())
+    .then(response => {
+      this.props.dispatch(loadUserData(response));
+    })
+  } 
   userActivityInfo=(id)=>{
       let member=this.props.members.filter((val)=>{
            return val.id==id;
@@ -74,6 +72,6 @@ class UserInfo extends React.Component{
 const mapStateToProp = ( {userReducer:{ok,members}} ) => ({
  ok,
  members  
-})
+});
 
 export default  connect(mapStateToProp, null)(UserInfo);

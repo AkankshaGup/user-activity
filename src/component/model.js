@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import '../App.css';
 
 
+
 class ActivityModel extends React.Component{
   constructor(props){
     super(props);
